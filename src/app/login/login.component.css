@@ -1,0 +1,5 @@
+.outer {
+    height: 512px;
+    background: url('../../assets/imgs/loginBanner.png') no-repeat center center;
+    background-size: 100% 100%;
+}

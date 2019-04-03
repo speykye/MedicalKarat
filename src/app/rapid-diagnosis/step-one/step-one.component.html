@@ -1,0 +1,15 @@
+<form nz-form [formGroup]="stepOneForm" (ngSubmit)="_submitForm(stepOneForm.value)">
+  <nz-form-item nzFlex>
+    <nz-form-control nzSpan="6" nzOffset="9">
+      <nz-form-label nzRequired>您要为谁咨询</nz-form-label>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item nzFlex>
+    <nz-form-control nzSpan="6" nzOffset="9">
+      <nz-radio-group>
+        <label nz-radio nzValue="郭熳怡">郭熳怡</label>
+        <label nz-radio nzValue="张行宇">张行宇</label>
+      </nz-radio-group>
+    </nz-form-control>
+  </nz-form-item>
+</form>

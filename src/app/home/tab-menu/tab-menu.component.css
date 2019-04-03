@@ -1,0 +1,9 @@
+nz-card {
+    height: 396px;
+    border: none;
+    overflow: auto;
+}
+
+.departmentTitle {
+    color: #2482da;
+}

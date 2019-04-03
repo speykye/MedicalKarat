@@ -1,0 +1,49 @@
+.banner {
+    height: 513px;
+    background: url('../../assets/imgs/aboutUsBanner.png') no-repeat center center;
+    background-size: 100% 100%;
+}
+
+.title1 {
+    height: 211px;
+    background: url('../../assets/imgs/aboutUsTitle1.png') no-repeat center center;
+    background-size: 100%;
+}
+
+.introduceInfo {
+    padding-bottom: 110px;
+}
+
+.introduceInfo p {
+    text-align: justify;
+    text-indent: 2em;
+}
+
+.introduceInfo p:nth-child(4) {
+    color: #2482da;
+}
+
+.introduceInfo p span {
+    color: #00bca4;
+}
+
+.title2 {
+    height: 380px;
+    background: url('../../assets/imgs/aboutUsTitle2.png') no-repeat center center;
+    background-size: 100% 100%;
+}
+
+.title2 [nz-col] {
+    height: 72px;
+    margin-top: 190px;
+    line-height: 72px;
+    text-align: center;
+    background-color: #ffffff;
+    margin-right: 6px;
+}
+
+.title2 [nz-col]:hover {
+    background-color: #f4ee85;
+    color: #48afe4;
+    cursor: pointer;
+}

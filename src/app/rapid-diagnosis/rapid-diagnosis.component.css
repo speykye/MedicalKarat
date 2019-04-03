@@ -1,0 +1,21 @@
+.banner {
+    height: 79px;
+    background: url('../../assets/imgs/rapidDiagnosisBanner.png') no-repeat center center;
+    background-size: 100% 100%;
+}
+
+.container {
+    padding: 34px 0;
+    background-color: #edeff2;
+}
+
+.container .steps {
+    padding: 30px;
+    background-color: #fff;
+}  
+
+.container .steps .stepTip {
+    height: 135px;
+    background: url('../../assets/imgs/stepTip.png') no-repeat center center;
+    background-size: 100% 100%;
+}

@@ -1,0 +1,120 @@
+<nz-card *ngIf="name == '内科'">
+  <nz-skeleton nzActive="true" [nzLoading]="isLoading">
+    <nz-list [nzDataSource]="classes" [nzRenderItem]="item" nzItemLayout="horizontal">
+      <ng-template #item let-i>
+        <nz-list-item>
+          <nz-list-item-meta [nzTitle]="itemTitle" [nzDescription]="contents">
+            <ng-template #itemTitle>
+              <a class="departmentTitle">{{i.title}}</a>
+            </ng-template>
+            <ng-template #contents>
+              <nz-breadcrumb nzSeparator="|">
+                <nz-breadcrumb-item *ngFor="let data of i.diseases"><a>{{data}}</a></nz-breadcrumb-item>
+              </nz-breadcrumb>
+            </ng-template>
+          </nz-list-item-meta>
+        </nz-list-item>
+      </ng-template>
+    </nz-list>
+  </nz-skeleton>
+</nz-card>
+<nz-card *ngIf="name == '外科'">
+  <nz-skeleton nzActive="true" [nzLoading]="isLoading">
+    <nz-list [nzDataSource]="classes" [nzRenderItem]="item" nzItemLayout="horizontal">
+      <ng-template #item let-i>
+        <nz-list-item>
+          <nz-list-item-meta [nzTitle]="itemTitle" [nzDescription]="contents">
+            <ng-template #itemTitle>
+              <a class="departmentTitle">{{i.title}}</a>
+            </ng-template>
+            <ng-template #contents>
+              <nz-breadcrumb nzSeparator="|">
+                <nz-breadcrumb-item *ngFor="let data of i.diseases"><a>{{data}}</a></nz-breadcrumb-item>
+              </nz-breadcrumb>
+            </ng-template>
+          </nz-list-item-meta>
+        </nz-list-item>
+      </ng-template>
+    </nz-list>
+  </nz-skeleton>
+</nz-card>
+<nz-card *ngIf="name == '妇产科'">
+  <nz-skeleton nzActive="true" [nzLoading]="isLoading">
+    <nz-list [nzDataSource]="classes" [nzRenderItem]="item" nzItemLayout="horizontal">
+      <ng-template #item let-i>
+        <nz-list-item>
+          <nz-list-item-meta [nzTitle]="itemTitle" [nzDescription]="contents">
+            <ng-template #itemTitle>
+              <a class="departmentTitle">{{i.title}}</a>
+            </ng-template>
+            <ng-template #contents>
+              <nz-breadcrumb nzSeparator="|">
+                <nz-breadcrumb-item *ngFor="let data of i.diseases"><a>{{data}}</a></nz-breadcrumb-item>
+              </nz-breadcrumb>
+            </ng-template>
+          </nz-list-item-meta>
+        </nz-list-item>
+      </ng-template>
+    </nz-list>
+  </nz-skeleton>
+</nz-card>
+<nz-card *ngIf="name == '皮肤科'">
+  <nz-skeleton nzActive="true" [nzLoading]="isLoading">
+    <nz-list [nzDataSource]="classes" [nzRenderItem]="item" nzItemLayout="horizontal">
+      <ng-template #item let-i>
+        <nz-list-item>
+          <nz-list-item-meta [nzTitle]="itemTitle" [nzDescription]="contents">
+            <ng-template #itemTitle>
+              <a class="departmentTitle">{{i.title}}</a>
+            </ng-template>
+            <ng-template #contents>
+              <nz-breadcrumb nzSeparator="|">
+                <nz-breadcrumb-item *ngFor="let data of i.diseases"><a>{{data}}</a></nz-breadcrumb-item>
+              </nz-breadcrumb>
+            </ng-template>
+          </nz-list-item-meta>
+        </nz-list-item>
+      </ng-template>
+    </nz-list>
+  </nz-skeleton>
+</nz-card>
+<nz-card *ngIf="name == '骨科'">
+  <nz-skeleton nzActive="true" [nzLoading]="isLoading">
+    <nz-list [nzDataSource]="classes" [nzRenderItem]="item" nzItemLayout="horizontal">
+      <ng-template #item let-i>
+        <nz-list-item>
+          <nz-list-item-meta [nzTitle]="itemTitle" [nzDescription]="contents">
+            <ng-template #itemTitle>
+              <a class="departmentTitle">{{i.title}}</a>
+            </ng-template>
+            <ng-template #contents>
+              <nz-breadcrumb nzSeparator="|">
+                <nz-breadcrumb-item *ngFor="let data of i.diseases"><a>{{data}}</a></nz-breadcrumb-item>
+              </nz-breadcrumb>
+            </ng-template>
+          </nz-list-item-meta>
+        </nz-list-item>
+      </ng-template>
+    </nz-list>
+  </nz-skeleton>
+</nz-card>
+<nz-card *ngIf="name == '耳鼻喉科'">
+  <nz-skeleton nzActive="true" [nzLoading]="isLoading">
+    <nz-list [nzDataSource]="classes" [nzRenderItem]="item" nzItemLayout="horizontal">
+      <ng-template #item let-i>
+        <nz-list-item>
+          <nz-list-item-meta [nzTitle]="itemTitle" [nzDescription]="contents">
+            <ng-template #itemTitle>
+              <a class="departmentTitle">{{i.title}}</a>
+            </ng-template>
+            <ng-template #contents>
+              <nz-breadcrumb nzSeparator="|">
+                <nz-breadcrumb-item *ngFor="let data of i.diseases"><a>{{data}}</a></nz-breadcrumb-item>
+              </nz-breadcrumb>
+            </ng-template>
+          </nz-list-item-meta>
+        </nz-list-item>
+      </ng-template>
+    </nz-list>
+  </nz-skeleton>
+</nz-card>

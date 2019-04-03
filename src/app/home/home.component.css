@@ -1,0 +1,82 @@
+.banner {
+    height: 419px;
+    background: url('../../assets/imgs/banner.png') no-repeat left top;
+    background-size: 100%;
+}
+
+.banner .searchBar, .banner .calendar {
+    height: 45px;
+}
+
+.banner .calendar {
+    color: #fff;
+    background-color: #009a6c;
+    border-radius: 4px;
+}
+
+.title {
+    height: 208px;
+    background: url('../../assets/imgs/title.png') no-repeat center center;
+}
+
+.tabMenu {
+    padding: 0;
+    margin: 0;
+    color: #fff;
+}
+
+.tabMenu li {
+    height: 66px;
+    list-style: none;
+    line-height: 66px;
+    padding-left: 20px;
+    background-color: #2482da;
+    border-bottom: 1px solid #7ecef4;
+    border-left: 2px solid #2482da;
+}
+
+.tabMenu li:hover {
+    color: #2482da;
+    cursor: pointer;
+    background-color: #fff;
+    border-left: 2px solid #ff8c10;
+}
+
+.tabMenu li img {
+    margin-right: 10px;
+}
+
+.selected {
+    color: #2482da;
+    cursor: pointer;
+    background-color: #fff !important;
+    border-left: 2px solid #ff8c10 !important;
+}
+
+.login-form {
+    margin-top: 36px;
+}
+
+.login-form-forgot {
+    float: right;
+}
+
+.starDoctors {
+    height: 483px;
+    padding: 0 18px;
+    background: url('../../assets/imgs/bg1.png') no-repeat center bottom;
+    background-size: 100%;
+}
+
+.noBadge {
+    position: absolute;
+    right: -22px;
+    top: -22px;
+}
+
+.title2 {
+    height: 120px;
+    margin-top: 100px;
+    background: url('../../assets/imgs/title2.png') no-repeat center center;
+    background-size: 100%;
+}

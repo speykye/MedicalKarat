@@ -1,0 +1,162 @@
+<div class="banner" nzType="flex" nzAlign="bottom" nz-row>
+  <div nz-col class="searchBar" nzSpan="9" nzOffset="6">
+    <nz-input-group style="height: 45px;" [nzPrefix]="searchImg" nzSearch>
+      <input nz-input nzSize="large" placeholder="请输入疾病名称、科室名称、医院名称或医生名称">
+    </nz-input-group>
+    <ng-template #searchImg>
+      <i nz-icon type="search" theme="outline"></i>
+    </ng-template>
+  </div>
+  <div nz-col class="calendar" nzSpan="3" style="line-height: 45px;font-size: 22px;text-align: center;">
+    <span>{{today | date: 'M'}}/{{today | date: 'd'}}/{{today | date:'y'}}</span>
+    <img style="float: right;margin-top: 10px;margin-right: 30px;" src="assets/icons/calendar.png" alt="">
+  </div>
+</div>
+<div class="title" nzType="flex" nzAlign="middle" nz-row></div>
+<div nzType="flex" nzAlign="bottom" nz-row>
+  <div nz-col nzSpan="12" nzOffset="4">
+    <nz-card [nzBodyStyle]="{'padding':'0'}">
+      <nz-tabset nzSize="large" [nzTabBarStyle]="tabStyle">
+        <nz-tab nzTitle="按科室问诊">
+          <div nz-col>
+            <div nz-col nzSpan="4">
+              <ul class="tabMenu">
+                <li *ngFor="let department of departments;let i = index;" [ngClass]="department.focus ? 'selected' : ''"
+                  (mouseenter)="getStatus1(i, department.iconName, department.name)"
+                  (mouseleave)="blur1(i, department.iconName, $event)">
+                  <img [src]="department.iconName" alt="">
+                  {{department.name}}
+                </li>
+              </ul>
+            </div>
+            <div nz-col nzSpan="20">
+              <app-tab-menu [name]="recordName" [isLoading]="loading"></app-tab-menu>
+            </div>
+          </div>
+        </nz-tab>
+        <nz-tab nzTitle="按医院问诊">
+          <div nz-col>
+            <div nz-col nzSpan="4">
+              <ul class="tabMenu">
+                <li *ngFor="let department of departments;let i = index;" [ngClass]="department.focus ? 'selected' : ''"
+                  (mouseenter)="getStatus2(i, department.iconName, department.name)"
+                  (mouseleave)="blur2(i, department.iconName, $event)">
+                  <img [src]="department.iconName" alt="">
+                  {{department.name}}
+                </li>
+              </ul>
+            </div>
+            <div nz-col nzSpan="20">
+              <app-tab-menu [name]="recordName" [isLoading]="loading"></app-tab-menu>
+            </div>
+          </div>
+        </nz-tab>
+      </nz-tabset>
+    </nz-card>
+  </div>
+  <div class="loginBlock" nz-col nzSpan="4" style="height: 453px;">
+    <nz-card [nzBodyStyle]="cardStyle">
+      <div nz-col nzSpan="24" style="font-size: 18px;height: 30px;line-height: 30px;">
+        黑龙江 哈尔滨
+      </div>
+      <div nz-col nzSpan="24">
+        <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+          <nz-form-item>
+            <nz-form-control>
+              <nz-select formControlName="userName" nzPlaceHolder="请选择医院">
+                <nz-option nzLabel="Jack" nzValue="jack"></nz-option>
+                <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
+                <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
+              </nz-select>
+              <nz-form-explain *ngIf="validateForm.get('userName')?.dirty && validateForm.get('userName')?.errors">
+                Please
+                input your username!</nz-form-explain>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-control>
+              <nz-select formControlName="password" nzPlaceHolder="请选择科室">
+                <nz-option nzLabel="Jack" nzValue="jack"></nz-option>
+                <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
+                <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
+              </nz-select>
+              <nz-form-explain *ngIf="validateForm.get('password')?.dirty && validateForm.get('password')?.errors">
+                Please
+                input your Password!</nz-form-explain>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-control>
+              <nz-select formControlName="remember" nzPlaceHolder="请选择医生">
+                <nz-option nzLabel="Jack" nzValue="jack"></nz-option>
+                <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
+                <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
+              </nz-select>
+              <nz-form-explain *ngIf="validateForm.get('password')?.dirty && validateForm.get('remember')?.errors">
+                Please
+                input your Password!</nz-form-explain>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-control>
+              <button nz-button nzType="primary" nzSize="large" nzBlock="true">立即问诊</button>
+              <a href="">我的问诊记录</a>
+            </nz-form-control>
+          </nz-form-item>
+        </form>
+      </div>
+    </nz-card>
+  </div>
+</div>
+<div class="starDoctors" nzType="flex" nz-row>
+  <div nz-col nzSpan="3" nzOffset="4">
+    <nz-card style="margin-top: 132px;position: relative;" nzHoverable="true">
+      <img class="noBadge" src="assets/icons/no3Badge.png" alt="">
+      <nz-card-meta [nzAvatar]="no3" nzTitle="袁丁末" nzDescription="副主任医师"></nz-card-meta>
+      <p style="width:100%;text-align: center;margin-top: 1em;margin-bottom: .5em;color: #66a0e2;">北京协和医院西院 - 口腔科</p>
+      <p style="width:100%;text-align: center;margin-bottom: .5em;color: #66a0e2;">北京协和医院 - 口腔科</p>
+      <p style="width: 100%;margin-bottom: .5em;">擅长: 擅长各类口腔临床常见疾病，牙体牙髓病、根尖周病，牙龈牙周病的诊治。</p>
+      <p style="width: 100%;margin-bottom: .5em;">简介: 袁丁未，男，副主任医师，副教授，口腔内科牙体牙髓专业，毕业于毕业于北京医科... </p>
+    </nz-card>
+  </div>
+  <div nz-col nzSpan="3" style="margin-left: 28px;">
+    <nz-card style="margin-top: 100px;position: relative;" nzHoverable="true">
+      <img class="noBadge" src="assets/icons/no2Badge.png" alt="">
+      <nz-card-meta [nzAvatar]="no2" nzTitle="杨光" nzDescription="主任医师"></nz-card-meta>
+      <p style="width:100%;text-align: center;margin-top: 1em;margin-bottom: .5em;color: #66a0e2;">中国人民解放军总医院301医院小儿内科
+      </p>
+      <p style="width: 100%;margin-bottom: .5em;">擅长: 儿童常见病及小儿癫痫、抽动症、多动症、发育迟缓、遗传代谢病等的诊治。</p>
+      <p style="width: 100%;margin-bottom: .5em;">简介: 主任医师、副教授、硕士研究生导师、科室行政副主任。解放军军医学院博士...</p>
+    </nz-card>
+  </div>
+  <div nz-col nzSpan="5" style="margin-left: 28px;">
+    <nz-card style="margin-top: 60px;position: relative;" nzHoverable="true">
+      <img class="noBadge" src="assets/icons/no1Badge.png" alt="">
+      <nz-card-meta [nzAvatar]="no1" nzTitle="周学勤" nzDescription="主任医师"></nz-card-meta>
+      <p style="margin-top: 1em;margin-bottom: .5em;color: #66a0e2;">哈尔滨市第一医院 - 生殖医学中心</p>
+      <p style="margin-bottom: .5em;color: #66a0e2;">哈尔滨市第一医院 - 妇科</p>
+      <nz-tag [nzColor]="'orange'">子宫肌瘤</nz-tag>
+      <nz-tag [nzColor]="'orange'">子宫内膜息肉</nz-tag>
+      <nz-tag [nzColor]="'orange'">不孕症</nz-tag>
+      <p style="width: 100%;margin-bottom: .5em;">擅长: 不孕不育，反复流产，夫精人工授精，供精人工授精，夫精试管婴儿，供精试管婴儿...</p>
+      <p style="width: 100%;margin-bottom: .5em;">简介: 周学勤，主任医师，生殖中心主任，黑龙江省围产医学委员会委员、黑龙江省卫生计生委人类...</p>
+    </nz-card>
+  </div>
+  <div nz-col nzSpan="4" style="margin-left: 18px;">
+    <img style="float: right;height: 50px;margin-top: 176px;" src="assets/imgs/starDoctorLogo.png" alt="">
+    <p style="width:100%;text-align: right;color: #009a6c;font-size: 12px;float: right;font-weight: 600;margin-top: 2em;">以我们的热心、关心、细心、耐心，让您舒心</p>
+    <p style="width:100%;text-align: right;color: #009a6c;font-size: 12px;float: right;font-weight: 600;">放心、安心、欢心</p>
+    <button nz-button nzSize="large" nzType="primary" nzBlock>立即预约</button>
+    <a style="color:#009a6c;float: right;font-size: 20px;margin-top: 10px;">更多</a>
+  </div>
+  <ng-template #no3>
+    <nz-avatar nzSrc="assets/imgs/no3.png" [nzSize]="60"></nz-avatar>
+  </ng-template>
+  <ng-template #no2>
+    <nz-avatar nzSrc="assets/imgs/no2.png" [nzSize]="60"></nz-avatar>
+  </ng-template>
+  <ng-template #no1>
+    <nz-avatar nzSrc="assets/imgs/no1.png" [nzSize]="60"></nz-avatar>
+  </ng-template>
+</div>
+<!-- <div class="title2" nz-row></div> -->

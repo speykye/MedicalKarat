@@ -1,0 +1,86 @@
+<div class="header" nzType="flex" nzAlign="middle" nz-row>
+  <div nz-col nzSpan="8" nzOffset="4">
+    <nz-breadcrumb nzSeparator="|">
+      欢迎光临医克拉！请&nbsp;&nbsp;
+      <nz-breadcrumb-item>
+        <a routerLink="./login">登录</a>
+      </nz-breadcrumb-item>
+      <nz-breadcrumb-item>
+        <a routerLink="./login">注册</a>
+      </nz-breadcrumb-item>
+    </nz-breadcrumb>
+  </div>
+  <div nz-col nzSpan="8">
+    <nz-breadcrumb style="float: right" nzSeparator="|">
+      <nz-breadcrumb-item>
+        <a>用户反馈</a>
+      </nz-breadcrumb-item>
+      <nz-breadcrumb-item>
+        <a>招贤纳士</a>
+      </nz-breadcrumb-item>
+      <nz-breadcrumb-item>
+        <a>联系我们</a>
+      </nz-breadcrumb-item>
+    </nz-breadcrumb>
+  </div>
+</div>
+<div class="nav" nzType="flex" nzAlign="middle" nz-row>
+  <div nz-col nzSpan="6" nzOffset="4">
+    <img class="logo" src="assets/imgs/logo.png">
+    <img class="logo2" src="assets/imgs/logo2.png">
+  </div>
+  <div nz-col nzSpan="10">
+    <ul class="headerRightNav" nzMode="horizontal" nz-menu>
+      <li nzSelected="true" routerLink="home" nz-menu-item>首页</li>
+      <li routerLink="rapidDiagnosis" nz-menu-item>一分钟诊疗</li>
+      <li routerLink="medicalDepartment" nz-menu-item>医务科室</li>
+      <li routerLink="starDoctors" nz-menu-item>星级医生</li>
+      <li routerLink="medicalInformation" nz-menu-item>医疗资讯</li>
+      <li routerLink="personalCenter" nz-menu-item>个人中心</li>
+      <li routerLink="aboutUs" nz-menu-item>关于我们</li>
+    </ul>
+  </div>
+</div>
+<router-outlet></router-outlet>
+<div class="footer" nzType="flex" nzAlign="middle" nz-row>
+  <div nz-col nzSpan="4" nzOffset="4">
+    <div nz-col nzSpan="24">
+      <img class="logo" src="assets/imgs/logo.png" alt="">
+    </div>
+    <div nz-col nzSpan="24">
+      <img class="logo2" src="assets/imgs/footerLogo.png" alt="">
+    </div>
+  </div>
+  <div nz-col nzSpan="4">
+    <h2>企业地址</h2>
+    <h3>黑龙江省哈尔滨市南岗区学府路196号</h3>
+    <h2 style="margin-top: 10px;">网站导航</h2>
+    <nz-breadcrumb nzSeparator="">
+      <nz-breadcrumb-item>
+        <a>关于我们</a>
+      </nz-breadcrumb-item>
+      <nz-breadcrumb-item>
+        <a>联系我们</a>
+      </nz-breadcrumb-item>
+      <nz-breadcrumb-item>
+        <a>广纳贤才</a>
+      </nz-breadcrumb-item>
+      <nz-breadcrumb-item>
+        <a>在线留言</a>
+      </nz-breadcrumb-item>
+    </nz-breadcrumb>
+  </div>
+  <div nz-col nzSpan="4">
+    <h2 style="margin-bottom: 6px;">联系方式</h2>
+    <h1 style="font-size: 40px;">0451-5986855</h1>
+    <nz-breadcrumb>
+      <nz-breadcrumb-item>
+        邮箱：yikela120@163.com
+      </nz-breadcrumb-item>
+    </nz-breadcrumb>
+  </div>
+  <div nz-col nzSpan="4">
+
+  </div>
+</div>
+<nz-back-top nzVisibilityHeight="300"></nz-back-top>
