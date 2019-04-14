@@ -11,7 +11,7 @@ import { registerLocaleData, APP_BASE_HREF, LocationStrategy, HashLocationStrate
 import zh from '@angular/common/locales/zh';
 import { HomeComponent } from './home/home.component';
 import { TabMenuComponent } from './home/tab-menu/tab-menu.component';
-
+import { LoginActive } from './guard/login-ctrl';
 
 registerLocaleData(zh);
 
@@ -32,7 +32,8 @@ registerLocaleData(zh);
   providers: [
     { provide: NZ_I18N, useValue: zh_CN },
     { provide: APP_BASE_HREF, useValue: './' },
-    { provide: LocationStrategy, useClass: HashLocationStrategy}
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    LoginActive
   ],
   bootstrap: [AppComponent]
 })

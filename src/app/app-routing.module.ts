@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { LoginActive } from './guard/login-ctrl';
 
 const routes: Routes = [{
   path: '',
@@ -22,7 +23,7 @@ const routes: Routes = [{
   path: 'medicalInformation',
   loadChildren: './medical-information/medical-information.module#MedicalInformationModule'
 }, {
-  path: 'personalCenter',
+  path: 'personalCenter/:id',
   loadChildren: './personal-center/personal-center.module#PersonalCenterModule'
 }, {
   path: 'aboutUs',

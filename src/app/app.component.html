@@ -31,13 +31,13 @@
   </div>
   <div nz-col nzSpan="10">
     <ul class="headerRightNav" nzMode="horizontal" nz-menu>
-      <li nzSelected="true" routerLink="home" nz-menu-item>首页</li>
-      <li routerLink="rapidDiagnosis" nz-menu-item>一分钟诊疗</li>
-      <li routerLink="medicalDepartment" nz-menu-item>医务科室</li>
-      <li routerLink="starDoctors" nz-menu-item>星级医生</li>
-      <li routerLink="medicalInformation" nz-menu-item>医疗资讯</li>
-      <li routerLink="personalCenter" nz-menu-item>个人中心</li>
-      <li routerLink="aboutUs" nz-menu-item>关于我们</li>
+      <li routerLink="home" routerLinkActive="ant-menu-item-selected" nz-menu-item>首页</li>
+      <li routerLink="rapidDiagnosis" routerLinkActive="ant-menu-item-selected" nz-menu-item>一分钟诊疗</li>
+      <li routerLink="medicalDepartment" routerLinkActive="ant-menu-item-selected" nz-menu-item>医务科室</li>
+      <li routerLink="starDoctors" routerLinkActive="ant-menu-item-selected" nz-menu-item>星级医生</li>
+      <li routerLink="medicalInformation" routerLinkActive="ant-menu-item-selected" nz-menu-item>医疗资讯</li>
+      <li [routerLink]="['./personalCenter',3]" routerLinkActive="ant-menu-item-selected" nz-menu-item>个人中心</li>
+      <li routerLink="aboutUs" routerLinkActive="ant-menu-item-selected" nz-menu-item>关于我们</li>
     </ul>
   </div>
 </div>
