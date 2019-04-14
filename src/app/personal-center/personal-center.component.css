@@ -1,0 +1,63 @@
+.title {
+    height: 80px;
+    background: url(../../assets/imgs/rapidDiagnosisBanner.png) no-repeat center center;
+    background-size: 100% 100%;
+}
+
+.userAvatar {
+    height: 272px;
+    background: #ebffff url(../../assets/imgs/loginBGI.png) no-repeat center 162px;
+}
+
+.userName {
+    font-size: 18px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.memberTitle, .memberServiceWin {
+    margin-left: 34px;
+}
+
+.memberTitle {
+    height: 106px;
+    border-bottom: 4px double #e1e1e1;
+}
+
+.memberInfo {
+    background-color: #febd1c;
+    border-radius: 6px;
+    padding: 5px 10px;
+}
+
+.memberLevel {
+    text-align: center;
+    color: #fff;
+}
+
+.memberDay {
+    width: 100%;
+    display: block;
+    border-radius: 4px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.memberServiceWin .memberServiceWinTitle {
+    height: 76px;
+    line-height: 76px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.memberServiceWin  .memberServiceWinTitle h2 {
+    padding-left: 22px;
+}
+
+.memberServiceWin .memberServiceWinTitle h2 .remark {
+    font-size: 14px;
+    color: #888888;
+}
+
+.container {
+    padding: 20px;
+}
