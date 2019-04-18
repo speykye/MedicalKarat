@@ -1,0 +1,59 @@
+<nz-tabset>
+  <nz-tab nzTitle="预约服务">
+    <form nz-form [formGroup]="orderForm" (ngSubmit)="confirm(orderForm.value)" nzLayout="inline">
+      <nz-form-item nzFlex>
+        <nz-form-label nzSpan="2">按状态筛选</nz-form-label>
+        <nz-form-control nzSpan="3">
+          <nz-select name="defaultSlected" formControlName="status" nzAllowClear>
+            <nz-option *ngFor="let item of statusList" [nzLabel]="item" [nzValue]="item">
+            </nz-option>
+          </nz-select>
+        </nz-form-control>
+        <nz-form-label nzSpan="2" nzOffset="1">就诊时间</nz-form-label>
+        <nz-form-control nzSpan="3">
+          <nz-select formControlName="time" nzAllowClear>
+            <nz-option *ngFor="let item of statusTime" [nzLabel]="item" [nzValue]="item">
+            </nz-option>
+          </nz-select>
+        </nz-form-control>
+        <nz-form-control nzSpan="2" nzOffset="1">
+          <button nzType="primary" nz-button nzBlock>确认</button>
+        </nz-form-control>
+        <nz-form-control nzSpan="3" nzOffset="7">
+          <button style="background-color: #1375de;color: #fff" nz-button nzBlock>上传转诊单</button>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+    <div nz-row nzType="flex" nzAlign="middle">
+      <div class="tableStyle" nz-col nzSpan="24">
+        <nz-table [nzData]="tableDatas" [nzPageSize]="10">
+          <thead>
+            <tr>
+              <th>预约医生</th>
+              <th>就诊人</th>
+              <th>预约状态</th>
+              <th>就诊时间</th>
+              <th>总金额</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let i of tableDatas">
+              <td>{{i.doctor}}</td>
+              <td>{{i.patient}}</td>
+              <td [ngStyle]="{'color':i.color}">{{i.status}}</td>
+              <td>{{i.time}}</td>
+              <td>{{i.sum}}</td>
+              <td>
+                <a (click)="i.fn(i.id)">删除</a>
+              </td>
+            </tr>
+          </tbody>
+        </nz-table>
+      </div>
+    </div>
+  </nz-tab>
+  <nz-tab nzTitle="转诊服务">
+    Content of Tab Pane 2
+  </nz-tab>
+</nz-tabset>
