@@ -1,0 +1,82 @@
+<div style="height:115px;padding-left: 10px;" nz-row nzType="flex" nzAlign="middle">
+  <div nz-col nzSpan="4">
+    <h3>用户积分： <span style="color: #f19149;">{{userIntegral}}</span></h3>
+  </div>
+  <div nz-col nzSpan="15" nzOffset="1">
+    <button nzType="primary" nz-button>兑换优惠</button>
+  </div>
+  <div nz-col nzSpan="4">
+    <nz-select [(ngModel)]="changeData" name="changeData" nzAllowClear>
+      <nz-option *ngFor="let item of times" [nzLabel]="item" [nzValue]="item">
+      </nz-option>
+    </nz-select>
+  </div>
+</div>
+<div nz-row nzType="flex" nzAlign="middle">
+  <div nz-col nzSpan="24">
+    <nz-table [nzData]="integralTable" [nzPageSize]="10">
+      <thead>
+        <tr>
+          <th>时间</th>
+          <th>内容</th>
+          <th>积分</th>
+          <th>剩余积分</th>
+          <th>备注</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let i of integralTable">
+          <td>{{i.time}}</td>
+          <td>{{i.content}}</td>
+          <td>{{i.integral}}</td>
+          <td style="color: #f19149;">{{i.residue}}</td>
+          <td>{{i.remark}}</td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+</div>
+<div style="border-bottom: 1px solid #dbdbdb;padding-left: 10px;" nz-row nzType="flex" nzAlign="middle">
+  <div nz-col nzSpan="24">
+    <h3>账户余额</h3>
+  </div>
+</div>
+<div style="height: 80px;" nz-row nzType="flex" nzAlign="middle">
+  <div style="padding-left: 10px;" nz-col nzSpan="4">
+    账户余额： <span style="color: #f19149">{{sum}}</span>&emsp;元
+  </div>
+  <div nz-col nzSpan="16">
+    <button nzType="primary" nz-button>充值</button>
+    <button style="margin-left: 20px;" nz-button>提现</button>
+  </div>
+  <div nz-col nzSpan="4">
+    <nz-select [(ngModel)]="defaultBalanceSelected" nzAllowClear>
+      <nz-option *ngFor="let item of balanceSelected" [nzLabel]="item" [nzValue]="item">
+      </nz-option>
+    </nz-select>
+  </div>
+</div>
+<div nz-row nzType="flex" nzAlign="middle">
+  <div nz-col nzSpan="24">
+    <nz-table #nzTable [nzData]="balanceTable" [nzPageSize]="10">
+      <thead>
+        <tr>
+          <th>时间</th>
+          <th>内容</th>
+          <th>金额</th>
+          <th>余额</th>
+          <th>备注</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let i of balanceTable">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+</div>
