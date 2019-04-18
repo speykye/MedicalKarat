@@ -1,0 +1,26 @@
+.title {
+    height: 58px;
+    padding: 0 22px;
+    border: 1px solid #519be1;
+    background-color: #f5f8ff;
+}
+
+.title h3 {
+    margin-bottom: 0;
+}
+
+.container {
+    padding: 28px 0;
+}
+
+.container .icon {
+    margin-right: 10px;
+}
+
+.container h3 span {
+    color: #888888;
+}
+
+form {
+    margin-top: 25%;
+}

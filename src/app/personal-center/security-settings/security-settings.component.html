@@ -1,0 +1,107 @@
+<div class="title" nz-row nzType="flex" nzAlign="middle">
+  <div nz-col nzSpan="24">
+    <h3>登录账号： <span style="color: #519be1;">{{userCount}}</span></h3>
+  </div>
+</div>
+<div class="container" nz-row nzType="flex" nzAlign="middle">
+  <div nz-col nzSpan="24">
+    <nz-list [nzItemLayout]="'horizontal'">
+      <nz-list-item [nzActions]="[modifyPWD]">
+        <h3><i class="icon" nz-icon nzType="lock" nzTheme="twotone"></i>登录密码：<span>登录网站时需要输入的密码</span></h3>
+        <ng-template #modifyPWD>
+          <a (click)="open('修改登录密码')">修改</a>
+        </ng-template>
+      </nz-list-item>
+      <nz-list-item [nzActions]="[modifyTel]">
+        <h3><i class="icon" nz-icon nzType="mobile" nzTheme="twotone"></i>手机号码：<span>1394602XXXX</span></h3>
+        <ng-template #modifyTel>
+          <a (click)="open('修改手机号码')">修改</a>
+        </ng-template>
+      </nz-list-item>
+      <nz-list-item [nzActions]="[modifyEmail]">
+        <h3><i class="icon" nz-icon nzType="mail" nzTheme="twotone"></i>电子邮箱：<span>为了您的账号安全，建议设置电子邮箱</span></h3>
+        <ng-template #modifyEmail>
+          <a (click)="open('修改电子邮箱')">修改</a>
+        </ng-template>
+      </nz-list-item>
+    </nz-list>
+  </div>
+</div>
+<nz-drawer nzClosable="false" [nzTitle]="shadowName" nzMask="true" [nzMaskClosable]="false" [nzVisible]="visible"
+  [nzWidth]="720" (nzOnClose)="close()">
+  <form *ngIf="shadowName == '修改登录密码'" nz-form [formGroup]="modifyPWDForm"
+    (ngSubmit)="modify(modifyPWDForm.value)" nzLayout="horizontal">
+    <nz-form-item>
+      <nz-form-label nzSpan="4" nzOffset="2" nzRequired>新密码</nz-form-label>
+      <nz-form-control nzSpan="12">
+        <input nz-input type="password" formControlName="newPWD">
+        <nz-form-extra>密码8-16位，需含大小写字母、数字、特殊字符</nz-form-extra>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label nzSpan="4" nzOffset="2" nzRequired>确认新密码</nz-form-label>
+      <nz-form-control nzSpan="12">
+        <input nz-input type="password" formControlName="confirmPWD">
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzSpan="4" nzOffset="6">
+        <button (click)="close()" nzBlock nz-button>取消</button>
+      </nz-form-control>
+      <nz-form-control nzSpan="4" nzOffset="4">
+        <button nzType="primary" nzBlock nz-button>确定</button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+  <form *ngIf="shadowName == '修改手机号码'" nz-form [formGroup]="modifyTelForm"
+    (ngSubmit)="modify(modifyTelForm.value)" nzLayout="horizontal">
+    <nz-form-item>
+      <nz-form-label nzSpan="4" nzOffset="2" nzRequired>手机号码</nz-form-label>
+      <nz-form-control nzSpan="12">
+        <input type="tel" formControlName="telNum" nz-input>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label nzSpan="4" nzOffset="2" nzRequired>短信验证</nz-form-label>
+      <nz-form-control nzSpan="12">
+        <nz-input-group [nzAddOnAfter]="msgCode">
+          <input type="tel" formControlName="msgCode" nz-input>
+        </nz-input-group>
+        <ng-template #msgCode>
+          <a>获取短信验证码</a>
+        </ng-template>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzSpan="4" nzOffset="6">
+        <button (click)="close()" nzBlock nz-button>取消</button>
+      </nz-form-control>
+      <nz-form-control nzSpan="4" nzOffset="4">
+        <button nzType="primary" nzBlock nz-button>完成</button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+  <form *ngIf="shadowName == '修改电子邮箱'" nz-form [formGroup]="modifyMailForm" (ngSubmit)="modify(modifyMailForm.value)"
+    nzLayout="horizontal">
+    <nz-form-item>
+      <nz-form-label nzSpan="4" nzOffset="2">当前邮箱</nz-form-label>
+      <nz-form-control nzSpan="12">
+        <input value="未设置" nz-input readonly>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label nzSpan="4" nzOffset="2">新邮箱</nz-form-label>
+      <nz-form-control nzSpan="12">
+        <input type="email" formControlName="email" nz-input>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzSpan="4" nzOffset="6">
+        <button (click)="close()" nzBlock nz-button>取消</button>
+      </nz-form-control>
+      <nz-form-control nzSpan="4" nzOffset="4">
+        <button nzType="primary" nzBlock nz-button>保存</button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</nz-drawer>
